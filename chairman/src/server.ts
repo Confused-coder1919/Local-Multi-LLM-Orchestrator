@@ -1,10 +1,10 @@
 import express, { type NextFunction, type Request, type Response } from 'express';
 import dotenv from 'dotenv';
 import { z } from 'zod';
-import { OllamaClient, type OllamaMessage } from './ollamaClient';
+import { OllamaClient, type OllamaMessage } from '../../packages/inference/ollamaClient';
 import { CHAIRMAN_SYSTEM_PROMPT } from './prompts';
 import { SynthesizeRequestSchema, SynthesizeResponseSchema } from './schemas';
-import { estimateTokenUsage } from './tokenUsage';
+import { estimateTokenUsage } from '../../packages/inference/tokenUsage';
 
 dotenv.config();
 

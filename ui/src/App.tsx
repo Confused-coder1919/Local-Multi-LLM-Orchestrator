@@ -147,12 +147,11 @@ export default function App() {
       setRequestData(stateAfterStage1);
       refreshHistory();
 
+      currentStage = 'stage2';
       const okAnswers = stage1Response.answers.filter((answer) => answer.status === 'ok').length;
       if (okAnswers < 2) {
         throw new Error('Need at least 2 successful answers to continue.');
       }
-
-      currentStage = 'stage2';
       setStageStatus({ stage1: 'done', stage2: 'running', stage3: 'idle' });
       await stage2(stage1Response.request_id, stageOptions);
       setStageStatus({ stage1: 'done', stage2: 'done', stage3: 'running' });

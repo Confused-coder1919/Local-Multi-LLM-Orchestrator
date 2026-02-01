@@ -7,6 +7,21 @@ export interface AggregatedScore {
   score: number;
 }
 
+function uniqueValidRankings(rankings: string[], scores: Record<string, number>): string[] {
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  for (const anon_id of rankings) {
+    if (!anon_id || seen.has(anon_id) || !(anon_id in scores)) {
+      continue;
+    }
+    seen.add(anon_id);
+    result.push(anon_id);
+  }
+
+  return result;
+}
+
 export function aggregateRankings(
   reviews: ReviewRankingInput[],
   knownAnonIds: string[]
@@ -21,7 +36,7 @@ export function aggregateRankings(
       continue;
     }
 
-    const filtered = review.rankings.filter((anon_id) => anon_id in scores);
+    const filtered = uniqueValidRankings(review.rankings, scores);
     const total = filtered.length;
     filtered.forEach((anon_id, index) => {
       scores[anon_id] += total - index;
