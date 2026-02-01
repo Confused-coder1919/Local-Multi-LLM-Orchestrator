@@ -1,0 +1,14 @@
+[Unit]
+Description=LLM Council Member
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/llm-council
+EnvironmentFile=/etc/llm-council/member.env
+ExecStart=/usr/bin/npm run dev
+Restart=on-failure
+User=llm
+
+[Install]
+WantedBy=multi-user.target

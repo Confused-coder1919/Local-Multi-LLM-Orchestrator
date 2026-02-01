@@ -1,0 +1,14 @@
+[Unit]
+Description=LLM Council Chairman
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/llm-council/chairman
+EnvironmentFile=/etc/llm-council/chairman.env
+ExecStart=/usr/bin/npm run dev
+Restart=on-failure
+User=llm
+
+[Install]
+WantedBy=multi-user.target

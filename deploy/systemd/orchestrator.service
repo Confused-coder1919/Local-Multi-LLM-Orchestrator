@@ -1,0 +1,14 @@
+[Unit]
+Description=LLM Council Orchestrator
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/llm-council/orchestrator
+EnvironmentFile=/etc/llm-council/orchestrator.env
+ExecStart=/usr/bin/npm run dev
+Restart=on-failure
+User=llm
+
+[Install]
+WantedBy=multi-user.target
