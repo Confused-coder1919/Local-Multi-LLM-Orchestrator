@@ -26,12 +26,28 @@ open http://localhost:5173
 ```
 
 ## Demo
-![UI demo](docs/images/ui.png)
-![UI demo](docs/images/ui1.png)
-![UI demo](docs/images/ui2.png)
-![UI demo](docs/images/ui3.png)
-![UI demo](docs/images/ui4.png)
-![UI demo](docs/images/ui5.png)
+<table>
+  <tr>
+    <td><img src="docs/images/ui.png" alt="UI overview" width="420"></td>
+    <td><img src="docs/images/ui1.png" alt="Stage 1 answers" width="420"></td>
+    <td><img src="docs/images/ui2.png" alt="Stage 2 reviews" width="420"></td>
+  </tr>
+  <tr>
+    <td>Overview + health</td>
+    <td>Stage 1 answers + latency</td>
+    <td>Stage 2 reviews + critiques</td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/ui3.png" alt="Aggregated ranking" width="420"></td>
+    <td><img src="docs/images/ui4.png" alt="Stage 3 synthesis" width="420"></td>
+    <td><img src="docs/images/ui5.png" alt="Run history and export" width="420"></td>
+  </tr>
+  <tr>
+    <td>Aggregated ranking</td>
+    <td>Chairman synthesis</td>
+    <td>Run history + export</td>
+  </tr>
+</table>
 
 ## For reviewers
 - `orchestrator/src/server.ts` — stage coordination + persistence + heartbeat.
