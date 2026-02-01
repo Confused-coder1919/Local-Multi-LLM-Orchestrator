@@ -27,7 +27,11 @@ open http://localhost:5173
 
 ## Demo
 ![UI demo](docs/images/ui.png)
-Add screenshot of UI here.
+![UI demo](docs/images/ui1.png)
+![UI demo](docs/images/ui2.png)
+![UI demo](docs/images/ui3.png)
+![UI demo](docs/images/ui4.png)
+![UI demo](docs/images/ui5.png)
 
 ## For reviewers
 - `orchestrator/src/server.ts` — stage coordination + persistence + heartbeat.
